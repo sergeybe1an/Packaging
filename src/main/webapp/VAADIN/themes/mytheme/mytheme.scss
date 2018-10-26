@@ -1,0 +1,313 @@
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+$v-font-size: 14px;
+$v-font-weight: 400;
+//$v-font-family: "Arial", sans-serif, verdana;
+//$v-font-family: "Open Sans", sans-serif;
+//$v-font-family: "Calibri", "Open Sans", sans-serif;
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+//$v-error-indicator-color: #ed473b;
+
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+
+$v-luminance-threshold: 180 !default;
+
+$editor-background-color: #3b3f42 !default;
+$valo-menu-background-color: $editor-background-color !default;
+
+$v-focus-color: rgb(96, 160, 234) !default;
+$v-friendly-color: rgb(54, 185, 85);
+
+$login-info-width: 300px !default;
+$login-info-opacity: 0.7 !default;
+$login-background-color: $editor-background-color !default;
+// Get more background images from unsplash.com (remember to optimize the filesize)
+$login-background-image: "../../img/archetype-login-bg2.jpg" !default;
+
+/*$v-layout-margin-top: round($v-unit-size / 1.5) !default;
+$v-layout-margin-right: $v-layout-margin-top !default;
+$v-layout-margin-bottom: $v-layout-margin-top !default;
+$v-layout-margin-left: $v-layout-margin-top !default;
+$v-layout-spacing-vertical: round($v-unit-size / 1.8) !default;
+$v-layout-spacing-horizontal: round($v-unit-size / 1.8) !default;*/
+
+@import "../valo/valo.scss";
+
+@mixin mytheme {
+    @include valo;
+
+    // Insert your own theme rules here
+
+    /*    .v-table-cell-content {
+            height: $v-unit-size*0.8;
+        }*/
+
+    //.v-table-cell-content {height: 0px;};
+
+    .v-margin-top {
+        padding-top: 16px;
+    }
+    .v-grid .v-grid-cell.bold {
+        font-weight: bold;
+    }
+
+    .v-textfield-readonly {
+        background: #eee;
+    }
+
+    .v-table-row-odd  {
+        background-color: white;
+    }
+
+    .v-table-row-excluded  {
+        background-color: #d7baf2;
+    }
+
+    .v-table .v-table-cell-content-month {
+        background-color: #def;
+    }
+
+    .v-table .v-table-cell-content.bold {
+        font-weight: bold;
+    }
+
+    .v-table .v-table-cell-content-red {
+        background-color: #f88;
+        font-weight: bold;
+    }
+
+    .v-table .v-table-cell-content-orange {
+        background-color: #f84;
+        font-weight: bold;
+    }
+
+    .v-table .v-table-cell-content-green {
+        background-color: #6d6;
+        font-weight: bold;
+    }
+
+    .v-table .v-table-cell-content-blue {
+        background-color: #8af;
+        font-weight: bold;
+        /*        color: white;*/
+    }
+
+    .v-table .v-table-cell-content-lightgreen {
+        background-color: #efe;
+    }
+
+    .v-table .v-table-cell-content-lightyellow {
+        background-color: #ffe;
+    }
+
+    .v-table .v-selected .v-table-cell-content-lightgreen {
+        background-color: #18a9db;
+        color: black;
+    }
+
+    .v-table .v-selected .v-table-cell-content-lightyellow {
+        background-color: #78a9db;
+        color: black;
+        //font-size: 20px;
+    }
+
+
+    /*    .v-table .v-selected[class*="-row"] {
+            color: gold;
+            background-color: red;
+            font-size: 36px;
+        }*/
+
+    /*    .login-panel {
+            @include valo-panel-style;
+            padding: round($v-unit-size / 1.5) round($v-unit-size / 1.5);
+            min-width: $v-font-size * 13;
+            max-width: 90%;
+            @include animation(valo-animate-in-slide-up 800ms 10ms backwards, valo-animate-in-fade 600ms 100ms backwards);
+    
+            > .v-spacing {
+                height: round($v-unit-size / 2);
+            }
+    
+            .labels {
+                display: block;
+    
+                .h4 {
+                    margin: 0;
+                    vertical-align: baseline;
+                }
+    
+                .h3 {
+                    margin: 0;
+                    float: right;
+                }
+            }
+    
+            .fields .v-icon {
+                opacity: 0.3;
+            }
+    
+            @include width-range($min: 0, $max: $v-unit-size * 14) {
+                .labels .h3 {
+                    float: none;
+                    display: block;
+                    margin-top: .2em;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+    
+                .fields {
+                    display: block;
+    
+                    .v-slot {
+                        display: block;
+    
+                        .v-widget {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }*/
+
+    /*    .v-ui[width-range~="0-800px"] .login-panel {
+            @include animation(animate-in-scale-up 500ms 10ms backwards, valo-animate-in-fade 300ms 100ms backwards);
+        }*/
+
+    .v-ui[width-range~="801px-1900px"] {
+        .valo-menu { 
+            width: 200px;
+        }
+        .valo-menu-part { 
+            width: 200px;
+        }
+    }
+
+    .v-ui[width-range~="1901px-"] {
+        .valo-menu { 
+            width: 200px;
+        }
+        .valo-menu-part { 
+            width: 200px;
+        }
+    }
+
+    /*    .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part {
+            width: 100px;
+        }
+        
+        .valo-menu-responsive[width-range~="1101px-1900px"] .valo-menu-part {
+            width: 100px;
+        }
+        
+        .valo-menu-responsive[width-range~="1901px-9999px"] .valo-menu-part {
+            width: 200px;
+        }*/
+
+    /*    .order-panel {
+            @include animation(valo-animate-in-slide-up 800ms 10ms backwards, valo-animate-in-fade 600ms 100ms backwards);
+        }
+    
+        .v-window-modalitycurtain {
+            @include animation(valo-animate-in-slide-up 800ms 10ms backwards, valo-animate-in-fade 600ms 100ms backwards);
+            @include animation(valo-animate-in-fade 400ms 100ms backwards);
+        }*/
+
+    .yellow {
+        color: #ed0;
+    }
+
+    .green {
+        color: #0c0;
+    }
+
+    .orange {
+        color: #fb0;
+    }
+
+    .login-screen {
+        background: $editor-background-color;
+
+        @if $login-background-image {
+            background-image: url(#{$login-background-image});
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        width: 100%;
+        height: 100%;
+
+        .login-form {
+            @include valo-panel-style;
+            border: none;
+            /*            padding: $v-layout-margin;*/
+            @include valo-animate-in-fade($duration: 1s);
+        }
+
+        .login-information {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: $login-info-width;
+            height: 100%;
+            background: $v-selection-color; // For IE8
+            background-color: rgba($v-selection-color, $login-info-opacity);
+            padding: $v-unit-size; 
+            //padding: $v-layout-margin;
+            color: valo-font-color($v-selection-color, 0.9);
+            @include animation(valo-animate-in-fade 1s 1s backwards);
+
+            h1 {
+                color: inherit;
+            }
+        }
+
+        .centering-layout {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            padding-left: $login-info-width;
+
+            .v-slot {
+                height: 100%;
+            }
+        }
+    }
+    .news-read .v-grid-cell {
+        background-color: silver;
+        color: black;
+    }
+
+    .news-unread .v-grid-cell {
+        background-color: red;
+        color: white;
+    }
+
+    .highlight-red {
+        color: #b13028 !important;
+    }
+    
+    .highlight-weekend {
+        color: #ff9900 !important;
+    }
+}
